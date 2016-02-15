@@ -2,7 +2,6 @@ import java.sql.*;
 import java.util.HashMap;
 import java.util.ArrayList;
 import java.util.Map;
-
 import java.net.URI;
 import java.net.URISyntaxException;
 
@@ -12,8 +11,14 @@ import spark.ModelAndView;
 import static spark.Spark.get;
 
 import com.heroku.sdk.jdbc.DatabaseUrl;
+
+import freemarker.core.ReturnInstruction.Return;
 import static javax.measure.unit.SI.KILOGRAM;
+
 import javax.measure.quantity.Mass;
+
+import javolution.util.Index;
+
 import org.jscience.physics.model.RelativisticModel;
 import org.jscience.physics.amount.Amount;
 
@@ -24,8 +29,8 @@ public class Main {
     port(Integer.valueOf(System.getenv("PORT")));
     staticFileLocation("/public");
 
-    get("/hello", (req, res) -> {
-      RelativisticModel.select();
+    get("/wordrumb", (req, res) -> {
+    	RelativisticModel.select();
 
       String energy = System.getenv().get("ENERGY");
 

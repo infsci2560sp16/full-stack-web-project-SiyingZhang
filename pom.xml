@@ -6,6 +6,7 @@
   <groupId>com.example</groupId>
   <version>1.0-SNAPSHOT</version>
   <artifactId>wordrumb</artifactId>
+  
   <dependencies>
     <dependency>
       <groupId>com.sparkjava</groupId>
@@ -33,6 +34,7 @@
       <version>4.3.1</version>
     </dependency>
   </dependencies>
+  
   <build>
     <plugins>
       <plugin>
