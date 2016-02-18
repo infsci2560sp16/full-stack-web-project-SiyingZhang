@@ -1,0 +1,86 @@
+
+<!--
+Refered from: W3layouts
+Reference URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+<head>
+		<meta charset="utf-8">
+		<link href="stylesheets/profile-style.css" rel='stylesheet' type='text/css' />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+		<!--webfonts-->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text.css'/>
+		<!--//webfonts-->
+</head>
+
+<body>
+	<div class="main">
+		<div class="header" >
+			<h1>Your Profile</h1>
+		</div>
+		<p>Feel free to glance your profile or modify any part. </p>
+			<form action="" method="post" class="account-setting-form">
+				<table class="profile-table">
+					<tbody>
+						<tr class="tr-change-name hide">
+							<th>User Name: </th>
+							<td><input id="username-id" maxlength="30" name="username" readonly="readonly" type="text" value="<%=nameValue%>"><span class="muted">(Used to log in, all should be English letters.)</span></td>
+						</tr>
+						<tr>
+							<th>Change Password: </th>
+							<td><input id="changepw-id" maxlength="30" name="password" type="password"><span class="muted">(Only lowercases accepted)</span></td>
+						</tr>
+						<tr>
+							<th>Retype your password: </th>
+							<td><input id="pwconfirm-id" maxlength="30" name="retypepw" type="password"><span class="muted">(Retype your password please)</span></td>
+						</tr>
+						<tr>
+							<th>Timezone</th>
+							<td><select id="timezone-id" name="timezone">
+								<option value="America/New_York" selected="selected">United States/New York</option>
+								<option value="America/Chicago">United States/Chicago</option>
+								<option value="America/Los_Angeles">United States/Los Angeles</option>
+								<option value="America/Toronto">Canada/Toronto</option>
+								<option value="America/Vancouver">Canada/Vancouver</option>
+								<option value="Asia/Shanghai">China/Beijing</option>
+								<option value="Asia/Yekaterinburg">China/Yekaterinburg</option>
+								<option value="Asia/Hong_Kong">China/Hong Kong</option>
+								<option value="Asia/Taipei">China/Taipei</option>
+								<option value="Asia/Tokyo">Japan/Tokyo</option>
+								<option value="Australia/Sydney">Australia/Sydney</option>
+								<option value="Australia/Perth">Australia/Perth</option>
+								<option value="Pacific/Auckland">New Zealand/Auckland</option>
+								<option value="Europe/London">UK/London</option>
+								<option value="Europe/Paris">France/Paris</option>
+								<option value="Europe/Berlin">Germany/Berlin</option>
+								<option value="Europe/Moscow">Russia/Moscow</option>
+							</select></td>
+						</tr>
+						<tr>
+							<th>Profile Picture</th>
+							<td><img width="60" height="60" src="/images/avatar.png"><a href="#">Change</a></td>
+						</tr>
+						<tr>
+							<th>Email</th>
+							<td>"<%email%>"<a href="#">Change</a></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td class="submitbutton"><input class="submit" type="submit" value="Save"></td>
+						</tr>
+					</tbody>
+				</table>					
+			</form>
+		</div>
+			
+			<!-----start-copyright---->
+   			<div class="copy-right">
+				<p>Created by <a href="https://github.com/SiyingZhang">Siying Zhang</a></p> 
+			</div>
+			<!-----//end-copyright---->
+</body>
+</html>

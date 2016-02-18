@@ -1,0 +1,1 @@
+var changePw = document.getElementById("changepw-id");

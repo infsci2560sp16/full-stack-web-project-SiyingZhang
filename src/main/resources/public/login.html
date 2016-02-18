@@ -1,56 +1,68 @@
 <!--
-Author: W3layouts
-Author URL: http://w3layouts.com
+Refered from: W3layouts
+Reference URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
-<!DOCTYPE HTML>
+
+<!DOCTYPE html>
 <html>
 <head>
-<title>Wordrumb-Login</title>
-<link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
-<link href="stylesheets/login-style.css" rel="stylesheet" type="text/css" media="all"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
-<!-- -->
-<script>var __links = document.querySelectorAll('a');function __linkClick(e) { parent.window.postMessage(this.href, '*');} ;for (var i = 0, l = __links.length; i < l; i++) {if ( __links[i].getAttribute('data-t') == '_blank' ) { __links[i].addEventListener('click', __linkClick, false);}}</script>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script>$(document).ready(function(c) {
-	$('.alert-close').on('click', function(c){
-		$('.message').fadeOut('slow', function(c){
-	  		$('.message').remove();
-		});
-	});	  
-});
-</script>
+		<meta charset="utf-8">
+		<link href="stylesheets/login-style.css" rel='stylesheet' type='text/css' />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+		<!--webfonts-->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text.css'/>
+		<!--//webfonts-->
 </head>
 <body>
-<!-- contact-form -->	
-<div class="message warning">
-<div class="inset">
-	<div class="login-head">
-		<h1>Wordrumb Login</h1>
-		 <div class="alert-close"> </div> 			
-	</div>
-		<form>
-			<li>
-				<input type="text" class="text" value="Username" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Username';}"><a href="#" class=" icon user"></a>
-			</li>
-				<div class="clear"> </div>
-			<li>
-				<input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}"> <a href="#" class="icon lock"></a>
-			</li>
-			<div class="clear"> </div>
-			<div class="submit">
-				<input type="submit" onclick="myFunction()" value="Sign in" >
-				<h4><a href="#">Lost your Password ?</a></h4>
-				<div class="clear">  </div>	
+	<div class="main">
+		<div class="header" >
+			<h1>Wordrumb - Login or create an account!</h1>
+		</div>
+		<p>Login to your own account to keep synchronized of your words notes.</p>
+			<form>
+				<ul class="left-form">
+					<h2>New Account:</h2>
+					<li>
+						<input type="text"   placeholder="Username" required/>
+						<div class="clear"> </div>
+					</li> 
+					<li>
+						<input type="text"   placeholder="Email" required/>
+						<div class="clear"> </div>
+					</li> 
+					<li>
+						<input type="password"   placeholder="password" required/>
+						<div class="clear"> </div>
+					</li> 
+					<li>
+						<input type="password"   placeholder="password" required/>
+						<div class="clear"> </div>
+					</li> 
+					<label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i>Remember me (you don't need to input your information next time.)</label>
+					<input type="submit" onclick="myFunction()" value="Create Account">
+						<div class="clear"> </div>
+				</ul>
+				<ul class="right-form">
+					<h3>Login:</h3>
+					<div>
+						<li><input type="text"  placeholder="Username" required/></li>
+						<li> <input type="password"  placeholder="Password" required/></li>
+						<h4><a href="#">I forgot my Password!</a></h4>
+							<input type="submit" onclick="myFunction()" value="Login" >
+					</div>
+					<div class="clear"> </div>
+				</ul>
+				<div class="clear"> </div>			
+			</form>
+		</div>
+			
+			<!-----start-copyright---->
+   			<div class="copy-right">
+				<p>Created by <a href="https://github.com/SiyingZhang">Siying Zhang</a></p> 
 			</div>
-				
-		</form>
-		</div>					
-	</div>
-	<div class="clear"> </div>
+			<!-----//end-copyright---->
 </body>
 </html>
