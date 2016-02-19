@@ -29,6 +29,10 @@ body{
 	border-bottom: 3px solid #E7E0E0;
 	margin-top: -15px;
 }
+.change{
+	font-size: 13px;
+	color: gray;
+}
 table{
 	max-width: 100%;
 	background-color: transparent;

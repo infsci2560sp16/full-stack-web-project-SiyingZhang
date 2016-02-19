@@ -1,29 +1,22 @@
-
-<!--
-Refered from: W3layouts
-Reference URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
 <!DOCTYPE html>
 <html>
 <head>
+		<title>Wordrumb-Profile</title>
 		<meta charset="utf-8">
 		<link href="stylesheets/profile-style.css" rel='stylesheet' type='text/css' />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 		<!--webfonts-->
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text.css'/>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'/>
 		<!--//webfonts-->
 </head>
-
 <body>
 	<div class="main">
 		<div class="header" >
 			<h1>Your Profile</h1>
 		</div>
 		<p>Feel free to glance your profile or modify any part. </p>
-			<form action="" method="post" class="account-setting-form">
+			<form action="modify-profile.js" method="post" class="account-setting-form">
 				<table class="profile-table">
 					<tbody>
 						<tr class="tr-change-name hide">
@@ -62,11 +55,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</tr>
 						<tr>
 							<th>Profile Picture</th>
-							<td><img width="60" height="60" src="/images/avatar.png"><a href="#">Change</a></td>
+							<td><img width="60" height="60" src="/images/avatar.png" alt="profile picture"><a class="change" href="#">Change</a></td>
 						</tr>
 						<tr>
 							<th>Email</th>
-							<td>"<%email%>"<a href="#">Change</a></td>
+							<td>"returned email"<a class="change" href="#">Change</a></td>
 						</tr>
 						<tr>
 							<td></td>
@@ -77,10 +70,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			</form>
 		</div>
 			
-			<!-----start-copyright---->
+			<!---start-copyright-->
    			<div class="copy-right">
 				<p>Created by <a href="https://github.com/SiyingZhang">Siying Zhang</a></p> 
 			</div>
-			<!-----//end-copyright---->
+			<!---//end-copyright-->
 </body>
 </html>
