@@ -73,13 +73,13 @@ public class Main {
     	return new ModelAndView(attributes, "task1.ftl");
     }, new FreeMarkerEngine());
     
-    //DeleteStringSolution solution = new DeleteStringSolution();
+    DeleteStringSolution solution = new DeleteStringSolution();
     get("/task1_workout", (req, res) -> {
       Map<String, Object> attributes = new HashMap<>();
       String string1 = req.queryParams("string1");
       String substring = req.queryParams("substring");
 
-      int count = deleteSubstring(string1, substring);
+      int count = solution.deleteSubstring(string1, substring);
 
       attributes.put("string1", string1);
       attributes.put("count", count);
@@ -115,33 +115,6 @@ public class Main {
       }
     }, new FreeMarkerEngine());
 
-  }
-
-  public static int deleteSubstring(String s, String t) {
-    
-    //The target string has no length
-    if(t.length() == 0) {
-      return 0;
-    }
-
-    int count = 0;
-    int preIndex = 0;
-
-    while(s.length()>=t.length()) {
-      int index = s.indexOf(t, preIndex-t.length());
-
-      //no substring any more
-      if(index == -1) {
-        break;
-      } else {
-        //remove this substring
-        s = s.substring(0, index) + s.substring(index+t.length());
-        count ++;
-        preIndex = index;
-      }
-    }
-
-    return count;
   }
 
 }
