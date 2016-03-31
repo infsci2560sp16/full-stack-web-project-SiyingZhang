@@ -48,11 +48,12 @@ public class Main {
     //login action page
     get("/login_action", (req, res) -> {
       Map<String, Object> attributes = new HashMap<>();
-      String username = req.queryParams("login-username");
-      String password = req.queryParams("login-password");
+      String login_username = req.queryParams("login_username");
+      String login_password = req.queryParams("login_password");
 
-      attributes.put("login-username", username);
-      attributes.put("login-password", password);
+      attributes.put("message", "login action test page.");
+      attributes.put("login_username", login_username);
+      attributes.put("login_password", login_password);
 
       return new ModelAndView(attributes, "login_action.ftl");
     }, new FreeMarkerEngine());

@@ -15,18 +15,18 @@
 				<tr class="table-title"><td>New Account:
 				<td></tr>
 				<tr class="inputfield"><td>
-					<input name="register-username" type="text" placeholder="Username" required/>
+					<input name="register_username" type="text" placeholder="Username" required/>
 				</td></tr> 
 				<tr class="inputfield"><td>
-					<input name="register-email" type="text" placeholder="Email" required/>
+					<input name="register_email" type="text" placeholder="Email" required/>
 					<div class="clear"> </div>
 				</td></tr> 
 				<tr class="inputfield"><td>
-					<input name="register-password" type="password" placeholder="password" required/>
+					<input name="register_password" type="password" placeholder="password" required/>
 					<div class="clear"> </div>
 				</td></tr> 
 				<tr class="inputfield"><td>
-					<input name="register-retypepw" type="password" placeholder="password" required/>
+					<input name="register_retypepw" type="password" placeholder="password" required/>
 					<div class="clear"> </div>
 				</td></tr> 
 				<tr class="submit"><td>
@@ -37,8 +37,8 @@
 			<table class="right-table">
 				<tr class="table-title"><td>Login:
 				<td></tr>
-				<tr class="inputfield"><td><input name="login-username" type="text"  placeholder="Username" required/></td></tr>
-				<tr class="inputfield"><td> <input name="login-password" type="password"  placeholder="Password" required/></td></tr>
+				<tr class="inputfield"><td><input name="login_username" type="text"  placeholder="Username" required/></td></tr>
+				<tr class="inputfield"><td> <input name="login_password" type="password"  placeholder="Password" required/></td></tr>
 				<tr class="forgetpw"><td><a href="#">I forgot my Password!</a></td></tr>
 				<tr class="submit"><td><input type="submit" onclick="myFunction()" value="Login"><div class="clear"> </div>
 				</td></tr> 

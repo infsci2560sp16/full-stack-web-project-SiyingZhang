@@ -5,7 +5,7 @@
 
 <body>
 	<h1>Welcome to Wordrumb!</h1>
-	<p>Dear $login-username</p>
+	<p>Dear ${login_username} </p>
 </body>
 
 </html>
