@@ -69,8 +69,8 @@ public class Main {
     DeleteStringSolution solution = new DeleteStringSolution();
     get("/task1", (req, res) -> {
     	Map<String, Object> attributes = new HashMap<>();
-    	DeleteStringSolution solution = new DeleteStringSolution();
-    	
+    	attributes.put("message", "To find out how many substrings there.");
+      
     	return new ModelAndView(attributes, "task1.ftl");
     }, new FreeMarkerEngine());
     
