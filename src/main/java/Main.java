@@ -5,19 +5,26 @@ import java.util.Map;
 import java.net.URI;
 import java.net.URISyntaxException;
 
+
 import static spark.Spark.*;
 import spark.template.freemarker.FreeMarkerEngine;
 import spark.ModelAndView;
 import static spark.Spark.get;
 
+
 import com.heroku.sdk.jdbc.DatabaseUrl;
 
+
+import edu.pitt.siying.servertest.DeleteStringSolution;
 import freemarker.core.ReturnInstruction.Return;
 import static javax.measure.unit.SI.KILOGRAM;
 
+
 import javax.measure.quantity.Mass;
 
+
 import javolution.util.Index;
+
 
 import org.jscience.physics.model.RelativisticModel;
 import org.jscience.physics.amount.Amount;
@@ -58,6 +65,30 @@ public class Main {
       return new ModelAndView(attributes, "login_action.ftl");
     }, new FreeMarkerEngine());
 
+    //Task 1: Delete the substring
+    DeleteStringSolution solution = new DeleteStringSolution();
+    get("/task1", (req, res) -> {
+    	Map<String, Object> attributes = new HashMap<>();
+    	DeleteStringSolution solution = new DeleteStringSolution();
+    	
+    	return new ModelAndView(attributes, "task1.ftl");
+    }, new FreeMarkerEngine());
+    
+    get("/task1_workout", (req, res) -> {
+      Map<String, Object> attributes = new HashMap<>();
+      String string1 = req.queryParams("string1");
+      String substring = req.queryParams("substring");
+
+      int count = solution.deleteSubstring(string1, substring);
+
+      attributes.put("string1", string1);
+      attributes.put("count", count);
+      attributes.put("substring", substring);
+
+      return new ModelAndView(attributes, "task1_workout.ftl");
+    }, new FreeMarkerEngine());
+
+    //Database operation
     get("/db", (req, res) -> {
       Connection connection = null;
       Map<String, Object> attributes = new HashMap<>();
