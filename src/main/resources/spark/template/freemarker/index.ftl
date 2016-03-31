@@ -35,7 +35,7 @@
                     <a href="#" class="icon"></a>
                     <h2>User</h2>
                     <ul>
-                        <li><a href="login.html">Login/out</a></li>
+                        <li><a href="/login">Login/out</a></li>
                         <li><a href="profile.html">Profile</a></li>
                         <li><a href="#">Settings</a></li>
                     </ul>
