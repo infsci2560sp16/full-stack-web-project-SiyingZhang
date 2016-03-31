@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,23 +10,23 @@
 			<h1>Wordrumb - Login or create an account!</h1>
 		</div>
 		<p>Login to your own account to keep synchronized of your words notes.</p>
-		<form>
+		<form action="/login_action">
 			<table class="left-table">
 				<tr class="table-title"><td>New Account:
 				<td></tr>
 				<tr class="inputfield"><td>
-					<input type="text"   placeholder="Username" required/>
+					<input name="register-username" type="text" placeholder="Username" required/>
 				</td></tr> 
 				<tr class="inputfield"><td>
-					<input type="text"   placeholder="Email" required/>
+					<input name="register-email" type="text" placeholder="Email" required/>
 					<div class="clear"> </div>
 				</td></tr> 
 				<tr class="inputfield"><td>
-					<input type="password"   placeholder="password" required/>
+					<input name="register-password" type="password" placeholder="password" required/>
 					<div class="clear"> </div>
 				</td></tr> 
 				<tr class="inputfield"><td>
-					<input type="password"   placeholder="password" required/>
+					<input name="register-retypepw" type="password" placeholder="password" required/>
 					<div class="clear"> </div>
 				</td></tr> 
 				<tr class="submit"><td>
@@ -38,8 +37,8 @@
 			<table class="right-table">
 				<tr class="table-title"><td>Login:
 				<td></tr>
-				<tr class="inputfield"><td><input type="text"  placeholder="Username" required/></td></tr>
-				<tr class="inputfield"><td> <input type="password"  placeholder="Password" required/></td></tr>
+				<tr class="inputfield"><td><input name="login-username" type="text"  placeholder="Username" required/></td></tr>
+				<tr class="inputfield"><td> <input name="login-password" type="password"  placeholder="Password" required/></td></tr>
 				<tr class="forgetpw"><td><a href="#">I forgot my Password!</a></td></tr>
 				<tr class="submit"><td><input type="submit" onclick="myFunction()" value="Login"><div class="clear"> </div>
 				</td></tr> 

@@ -29,20 +29,7 @@ public class Main {
     port(Integer.valueOf(System.getenv("PORT")));
     staticFileLocation("/public");
 
-    get("/wordrumb", (req, res) -> {
-    	RelativisticModel.select();
-
-      String energy = System.getenv().get("ENERGY");
-
-      Amount<Mass> m = Amount.valueOf(energy).to(KILOGRAM);
-      return "E=mc^2: " + energy + " = " + m.toString();
-    });
-
-    /*
-   get("/login", (req, res) -> {
-	   
-   }, new FreeMarkerEngine());*/
-    
+    //main page 
     get("/", (request, response) -> {
             Map<String, Object> attributes = new HashMap<>();
             attributes.put("message", "Wordrumb - Help you memorize unfamiliar words!");
@@ -50,7 +37,7 @@ public class Main {
             return new ModelAndView(attributes, "index.ftl");
         }, new FreeMarkerEngine());
     
-    
+    //login page
     get("/login", (req, res) -> {
     	Map<String, Object> attributes = new HashMap<>();
       attributes.put("message", "Wordrumb - Login/out");
@@ -58,6 +45,18 @@ public class Main {
     	return new ModelAndView(attributes, "login.ftl");
     }, new FreeMarkerEngine());
     
+    //login action page
+    get("/login_action", (req, res) -> {
+      Map<String, Object> attributes = new HashMap<>();
+      String username = req.queryParams("login-username");
+      String password = req.queryParams("login-password");
+
+      attributes.put("login-username", username);
+      attributes.put("login-password", password);
+
+      return new ModelAndView(attributes, "login_action.ftl");
+    }, new FreeMarkerEngine());
+
     get("/db", (req, res) -> {
       Connection connection = null;
       Map<String, Object> attributes = new HashMap<>();
