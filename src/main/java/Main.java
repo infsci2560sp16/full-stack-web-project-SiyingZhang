@@ -51,10 +51,11 @@ public class Main {
         }, new FreeMarkerEngine());
     
     
-    get("/login.html", (req, res) -> {
+    get("/login", (req, res) -> {
     	Map<String, Object> attributes = new HashMap<>();
-    	
-    	return new ModelAndView(attributes, "index.ftl");
+      attributes.put("message", "Wordrumb - Login/out");
+
+    	return new ModelAndView(attributes, "login.ftl");
     }, new FreeMarkerEngine());
     
     get("/db", (req, res) -> {
