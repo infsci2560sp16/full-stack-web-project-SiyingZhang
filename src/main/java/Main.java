@@ -47,13 +47,15 @@ public class Main {
     //login page
     get("/login", (req, res) -> {
     	Map<String, Object> attributes = new HashMap<>();
+      //attributes.put("template", "login.ftl");      
+      //attributes.put("login_username", req.session().attributes("login_username"));
       attributes.put("message", "Wordrumb - Login/out");
 
     	return new ModelAndView(attributes, "login.ftl");
     }, new FreeMarkerEngine());
     
     //login action page
-    get("/login_action", (req, res) -> {
+    post("/login_action", (req, res) -> {
       Map<String, Object> attributes = new HashMap<>();
       String login_username = req.queryParams("login_username");
       String login_password = req.queryParams("login_password");

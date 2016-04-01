@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-		<#include "header.ftl">
-		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<#include "header.ftl">
+	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 </head>
 <body>
 	<div class="main">
@@ -43,14 +43,14 @@
 				<tr class="submit"><td><input type="submit" onclick="myFunction()" value="Login"><div class="clear"> </div>
 				</td></tr> 
 			</table>
-				<div class="clear"> </div>			
-			</form>
-		</div>
+			<div class="clear"> </div>			
+		</form>
+	</div>
 			
-		<!---start-copyright-->
-   		<div class="copy-right">
-			<p>Created by <a href="https://github.com/SiyingZhang">Siying Zhang</a></p> 
-		</div>
-		<!---//end-copyright-->
+	<!---start-copyright-->
+	<div class="copy-right">
+		<p>Created by <a href="https://github.com/SiyingZhang">Siying Zhang</a></p> 
+	</div>
+	<!---//end-copyright-->
 </body>
 </html>

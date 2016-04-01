@@ -21,7 +21,7 @@
 					<tbody>
 						<tr class="tr-change-name hide">
 							<th>User Name: </th>
-							<td><input id="username-id" maxlength="30" name="username" readonly="readonly" type="text" value="<%=nameValue%>"><span class="muted">(Used to log in, all should be English letters.)</span></td>
+							<td><input id="username-id" maxlength="30" name="username" readonly="readonly" type="text" value="{$username}"><span class="muted">(Used to log in, all should be English letters.)</span></td>
 						</tr>
 						<tr>
 							<th>Change Password: </th>
@@ -54,12 +54,8 @@
 							</select></td>
 						</tr>
 						<tr>
-							<th>Profile Picture</th>
-							<td><img width="60" height="60" src="/images/avatar.png" alt="profile picture"><a class="change" href="#">Change</a></td>
-						</tr>
-						<tr>
 							<th>Email</th>
-							<td>"returned email"<a class="change" href="#">Change</a></td>
+							<td>${email}<a class="change" href="#">Change</a></td>
 						</tr>
 						<tr>
 							<td></td>

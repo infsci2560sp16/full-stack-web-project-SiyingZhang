@@ -54,8 +54,7 @@
                     <a href="#" class="icon"></a>
                     <h2>Friend</h2>
                     <ul>
-                        <li><a href="#">Add Friend</a></li>
-                        <li><a href="#">Friend List</a></li>
+                        <li><p>View your friends list here.</p></li>  
                     </ul>
                 </div>
                 <div class="item ranking">
