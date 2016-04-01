@@ -2,55 +2,34 @@
 <html>
 <head>
 	<#include "header.ftl">
-	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<title>Login Form</title>
 </head>
 <body>
-	<div class="main">
-		<div class="header" >
-			<h1>Wordrumb - Login or create an account!</h1>
+	<section class="container">
+		<div class="login">
+			<h1>Login to Your Wordrumb</h1>
+		  	<form method="post" action="#">
+		    	<p><input type="text" name="login" value="" placeholder="Username or Email"></p>
+		    	<p><input type="password" name="password" value="" placeholder="Password"></p>
+		    	<p class="remember_me">
+		      	<label>
+		        	<input type="checkbox" name="remember_me" id="remember_me">
+		        Remember me on this computer
+		      	</label>
+		   		 </p>
+		    	<p class="submit"><input type="submit" name="commit" value="Login"></p>
+		  	</form>
 		</div>
-		<p>Login to your own account to keep synchronized of your words notes.</p>
-		<form action="/login_action">
-			<table class="left-table">
-				<tr class="table-title"><td>New Account:
-				<td></tr>
-				<tr class="inputfield"><td>
-					<input name="register_username" type="text" placeholder="Username" required/>
-				</td></tr> 
-				<tr class="inputfield"><td>
-					<input name="register_email" type="text" placeholder="Email" required/>
-					<div class="clear"> </div>
-				</td></tr> 
-				<tr class="inputfield"><td>
-					<input name="register_password" type="password" placeholder="password" required/>
-					<div class="clear"> </div>
-				</td></tr> 
-				<tr class="inputfield"><td>
-					<input name="register_retypepw" type="password" placeholder="password" required/>
-					<div class="clear"> </div>
-				</td></tr> 
-				<tr class="submit"><td>
-					<input type="submit" onclick="myFunction()" value="Create Account">
-					<div class="clear"> </div>
-				</td></tr> 
-			</table>
-			<table class="right-table">
-				<tr class="table-title"><td>Login:
-				<td></tr>
-				<tr class="inputfield"><td><input name="login_username" type="text"  placeholder="Username" required/></td></tr>
-				<tr class="inputfield"><td> <input name="login_password" type="password"  placeholder="Password" required/></td></tr>
-				<tr class="forgetpw"><td><a href="#">I forgot my Password!</a></td></tr>
-				<tr class="submit"><td><input type="submit" onclick="myFunction()" value="Login"><div class="clear"> </div>
-				</td></tr> 
-			</table>
-			<div class="clear"> </div>			
-		</form>
-	</div>
-			
-	<!---start-copyright-->
-	<div class="copy-right">
-		<p>Created by <a href="https://github.com/SiyingZhang">Siying Zhang</a></p> 
-	</div>
-	<!---//end-copyright-->
+
+		<div class="login-help">
+			<p>Still have no account? <a href="signup.html">Click here to sign up</a>.</p>
+		</div>
+	</section>
+
+	<section class="about">
+		<p class="about-author">
+	  &copy; 2016 <a href="https://www.linkedin.com/in/zhangsiying" target="_blank">Siying Zhang</a></p>
+	  Original PSD by <a href="http://www.premiumpixels.com/freebies/clean-simple-login-form-psd/" target="_blank">Orman Clark</a>
+	</section>
 </body>
 </html>
