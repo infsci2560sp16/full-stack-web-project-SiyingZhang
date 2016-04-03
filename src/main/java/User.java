@@ -1,13 +1,21 @@
+import java.util.ArrayList;
+import java.util.List;
+
 /*
  * @author Siying Zhang
  * 
- * user name & password
+ * user information
  */
 
-public class UserInfo {
+public class User {
 	private String username;
 	private String password;
 	private String useremail;
+	private List<User> friends;
+
+	public User() {
+		friends = new ArrayList<User>();
+	}
 
 	public String getUsername() {
 		return username;
@@ -31,5 +39,13 @@ public class UserInfo {
 
 	public void setUseremail(String email) {
 		this.useremail = email;
+	}
+
+	public List<User> getFriendsList() {
+		return this.friends;
+	}
+
+	public void setFriend(User user) {
+		this.friends.add(user);
 	}
 }

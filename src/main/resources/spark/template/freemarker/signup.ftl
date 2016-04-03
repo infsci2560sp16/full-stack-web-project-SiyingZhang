@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<#include "header.ftl">
 	<title>Signup Form</title>
-	<link rel="stylesheet" type="text/css" href="stylesheets/login-signup.css">
 </head>
 <body>
 	<section class="container">
 		<div class="login">
 			<h1>Sign up for Wordrumb</h1>
-		  	<form method="post" action="#">
+		  	<form method="POST" action="/register">
 		    	<p><input type="text" name="username" value="" placeholder="Username"></p>
 		    	<p><input type="text" name="useremail" value="" placeholder="User Email"></p>
 		    	<p><input type="password" name="password" value="" placeholder="Password"></p>

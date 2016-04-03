@@ -8,8 +8,8 @@
 	<section class="container">
 		<div class="login">
 			<h1>Login to Your Wordrumb</h1>
-		  	<form method="post" action="#">
-		    	<p><input type="text" name="login" value="" placeholder="Username or Email"></p>
+		  	<form method="POST" action="/login">
+		    	<p><input type="text" name="username" value="" placeholder="Username or Email"></p>
 		    	<p><input type="password" name="password" value="" placeholder="Password"></p>
 		    	<p class="remember_me">
 		      	<label>

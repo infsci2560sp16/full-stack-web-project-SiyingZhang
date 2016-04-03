@@ -44,18 +44,85 @@ public class Main {
             return new ModelAndView(attributes, "index.ftl");
         }, new FreeMarkerEngine());
     
-    //login page
-    get("/login", (req, res) -> {
-    	Map<String, Object> attributes = new HashMap<>();
-      //attributes.put("template", "login.ftl");      
-      //attributes.put("login_username", req.session().attributes("login_username"));
-      attributes.put("message", "Wordrumb - Login/out");
+    //sign up
+    get("/register", (req, res) -> {
+      Connection connection = null;
+      Map<String, Object> attributes = new HashMap<>();
+      attributes.put("title", "Register");
+      try {
+        connection = DatabaseUrl.extract().getConnection();
+        Statement stmt = connection.createStatement();
+        stmt.executeUpdate("CREATE TABLE IF NOT EXISTS users (name text primary key, email text, password text)");
+        String insert = "INSERT INTO users VALUES ('" + req.queryParams("username") + "', '"
+          + req.queryParams("useremail") + "','"
+          + req.queryParams("password") + "')";
+        if(req.queryParams("password").compareTo(req.queryParams("repassword")) == 0) {
+          System.out.println(insert);
+          stmt.executeUpdate(insert);
+          ResultSet rs = stmt.executeQuery("SELECT * FROM users");
 
-    	return new ModelAndView(attributes, "login.ftl");
+          ArrayList<String> output = new ArrayList<String>();
+          while(rs.next()) {
+            output.add("Read from DB: " + rs.getString("useremail") + " " + rs.getString("password"));
+          }
+          attributes.put("results", output);
+          return new ModelAndView(attributes, "db.ftl");
+        } else {
+          attributes.put("message", "Two inputs for email are not the same!");
+          return new ModelAndView(attributes, "error.ftl");
+        }
+      } catch (Exception e) {
+        attributes.put("message", "An error occurred: " + e);
+        return new ModelAndView(attributes, "error.ftl");
+      } finally {
+        if (connection != null)
+          try {
+            connection.close();
+          } catch (SQLException e) {
+          }
+      }
     }, new FreeMarkerEngine());
-    
-    //login action page
-    post("/login_action", (req, res) -> {
+
+    //login
+    get("/login", (req, res) -> {
+      Connection connection = null;
+    	Map<String, Object> attributes = new HashMap<>();
+      try {
+        connection = DatabaseUrl.extract().getConnection();
+        Statement stmt = connection.createStatement();
+        stmt.executeUpdate(
+          "CREATE TABLE IF NOT EXISTS users (name text primary key, email text, password text)");
+        ResultSet rs = stmt.executeQuery(
+          "SELECT * FROM users where name = '" + req.queryParams("username") + "'");
+        if(rs.next() && req.queryParams("password").equals(rs.getString("password"))) {
+          attributes.put("title", "Logged in");
+          attributes.put("message", "Logged in successfully!");
+          User user = new User();
+          user.setUsername(rs.getString("name"));
+          user.setUseremail(rs.getString("email"));
+          user.setPassword(rs.getString("password"));
+
+          attributes.put("user", user);
+          return new ModelAndView(attributes, "profile.ftl");
+        } else {
+        	attributes.put("title", "Not logged in!");
+        	attributes.put("message", "Wrong username or password! Try again.");
+        	return new ModelAndView(attributes, "error.ftl");
+        }
+      } catch (Exception e) {
+        attributes.put("message", "An error occurred: " + e);
+        return new ModelAndView(attributes, "error.ftl");
+      } finally {
+        if(connection != null)
+          try {
+            connection.close();
+          } catch (SQLException e) {
+          }
+      }
+    }, new FreeMarkerEngine());
+
+    //profile setting
+    post("/profile", (req, res) -> {
       Map<String, Object> attributes = new HashMap<>();
       String login_username = req.queryParams("login_username");
       String login_password = req.queryParams("login_password");
@@ -64,7 +131,7 @@ public class Main {
       attributes.put("login_username", login_username);
       attributes.put("login_password", login_password);
 
-      return new ModelAndView(attributes, "login_action.ftl");
+      return new ModelAndView(attributes, "profile.ftl");
     }, new FreeMarkerEngine());
 
     //Task 1: Delete the substring

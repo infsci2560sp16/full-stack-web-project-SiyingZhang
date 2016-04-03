@@ -29,4 +29,6 @@ public class UserProfile {
 	private void getUserProfile() {
 		
 	}
+
+	//get("/api/")
 }
