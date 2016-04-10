@@ -5,7 +5,7 @@
 $(document).ready(function(){
 	$('#register').click(function() {
 		var userName = $(' #userName').val(),
-		userEmail = $(' #userName').val(),
+		userEmail = $(' #userEmail').val(),
 		pwd1 = $(' #pwd1').val(),
 		pwd2 = $(' #pwd2').val();
 		
@@ -27,16 +27,14 @@ $(document).ready(function(){
                             $.get("/login",data);
                             window.location = '/index';
                         } else {
-                            $("#userAccount").val("");
+                            $("#userEmail").val("");
                             $('#pwd1').val("");
                             $('#pwd2').val("");
-                            $(".icheckbox_square-blue").removeClass("checked");
                         }
                     }
                     else {
                         $('#pwd1').val("");
                         $('#pwd2').val("");
-                        $(".icheckbox_square-blue").removeClass("checked");
                     }
                 },
                 error: function (jqXHR, textStatus, errorThrown) {

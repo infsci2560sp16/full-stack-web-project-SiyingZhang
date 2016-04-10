@@ -41,23 +41,23 @@ class UserService {
 
             HashMap<String, Object> attributes = new HashMap<>();
             String userName = request.queryParams("userName");
-            String userAccount = request.queryParams("userAccount");
+            String userEmail = request.queryParams("userEmail");
             String password = request.queryParams("password");
             attributes.put("userName", userName);
-            attributes.put("userAccount", userAccount);
+            attributes.put("userEmail", userEmail);
             tempUserName = userName;
 
-            System.out.println(userName + ", " + userAccount);
+            System.out.println(userName + ", " + userEmail);
 
             try {
-                if (this.checkNotExist(userAccount)) {
-                    User u = new User(userAccount, password, userName, UUID.randomUUID());
+                if (this.checkNotExist(userEmail)) {
+                    User u = new User(userEmail, password, userName, UUID.randomUUID());
                     ud.insertUser(u);
-                    System.out.println(this.getClass() + ": User " + userAccount + " registered successfully.");
+                    System.out.println(this.getClass() + ": User " + userEmail + " registered successfully.");
                     attributes.put("notExist", true);
                     attributes.put("status", "Registration succeeded, Redirecting page...");
                 } else {
-                    System.out.println(this.getClass() + ": User " + userAccount + " exists.");
+                    System.out.println(this.getClass() + ": User " + userEmail + " exists.");
                     attributes.put("notExist", false);
                     attributes.put("status", "Email has been registered, pleas use other ones.");
                 }
@@ -69,6 +69,7 @@ class UserService {
         });
 
         // redirecting to index page.
+        /*
         get("/", (request, response) -> {
             HashMap<String, Object> attributes = new HashMap<>();
             Session session = request.session(true);
@@ -77,6 +78,13 @@ class UserService {
                 u.setUsername(tempUserName);
                 attributes.put("user", u);
             }
+            return new ModelAndView(attributes, "index.ftl");
+        }, new FreeMarkerEngine());*/
+        //main page 
+        get("/", (request, response) -> {
+            HashMap<String, Object> attributes = new HashMap<>();
+            attributes.put("message", "Wordrumb - Help you memorize unfamiliar words!");
+
             return new ModelAndView(attributes, "index.ftl");
         }, new FreeMarkerEngine());
 

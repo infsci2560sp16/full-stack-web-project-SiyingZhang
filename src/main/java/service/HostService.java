@@ -1,12 +1,16 @@
 package service;
 
 import com.heroku.sdk.jdbc.DatabaseUrl;
+
 import org.jscience.physics.amount.Amount;
 import org.jscience.physics.model.RelativisticModel;
+
 import spark.ModelAndView;
 import spark.template.freemarker.FreeMarkerEngine;
+import task1.DeleteStringSolution;
 
 import javax.measure.quantity.Mass;
+
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -30,8 +34,9 @@ public class HostService {
         port(Integer.valueOf(System.getenv("PORT")));
         staticFileLocation("/public");
 
+        Task1Service ts = new Task1Service();
         UserService us = new UserService();
         ReviewService gs = new ReviewService();
-        Task1Service ts = new Task1Service();
+        
     }
 }
