@@ -5,9 +5,6 @@
 </head>
 
 <body>
-
-  <#include "nav.ftl">
-
 <div class="container">
 
   <h1>Database Output</h1>

@@ -1,4 +1,4 @@
-package edu.pitt.siying.servertest;
+package task1;
 
 /*
  * @author siying

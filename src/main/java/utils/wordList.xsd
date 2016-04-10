@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" >
+
+	<xs:element name="wordsList" maxOccurs="unbounded">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="wordId" type="UUID" minOccurs="1" maxOccurs="1" />
+				<xs:element name="word" type="xs:string" minOccurs="1" maxOccurs="1" />
+				<xs:element name="wordType" type="xs:string" minOccurs="1" maxOccurs="1" />
+				<xs:element name="explanation" type="xs:string" minOccurs="1" maxOccurs="1" />
+				<xs:element name="createTimeString" type="xs:string" minOccurs="0" maxOccurs="1" />
+			</xs:sequence>
+			<xs:attribute name="wordId" type="UUID" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:simpleType name="UUID">
+		<xs:restriction base="xs:string">
+			<xs:patter value="[a-zA-Z0-9-]{36}"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+</xs:schema>

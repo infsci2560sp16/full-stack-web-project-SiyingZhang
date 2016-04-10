@@ -50,7 +50,7 @@ fieldset{
 	/* The search text box. */
 	border:none;
 	color:#6697b7;
-	background:url("../images/searchbox.png") no-repeat;
+	background:url("../images/searchBox.png") no-repeat;
 	float:left;
 	font-family:Arial,Helvetica,sans-serif;
 	font-size:15px;
