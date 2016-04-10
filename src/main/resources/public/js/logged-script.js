@@ -20,15 +20,11 @@ $(document).ready(function () {
 
 
 // Sign in
-$('.btn.btn-primary.btn-block.btn-flat').on("click", function () {
-    var userAccount = $('#sign-in-userAccount').val(),
-        password = $('#sign-in-pwd').val();
+$('.login-button').on("click", function () {
+    var userEmail = $('#userEmail').val(),
+        password = $('#password').val();
 
-    if ($(".icheckbox_square-blue").hasClass("checked")) {
-        // TODO: add operation.
-    }
-
-    if (correctEmail(userAccount)) {
+    if (correctEmail(userEmail)) {
         $.getJSON("/login", function (data) {
             if (data.hasOwnProperty('status')) {
                 $("#info-message-container").css("margin-top", "-30px");
@@ -40,14 +36,14 @@ $('.btn.btn-primary.btn-block.btn-flat').on("click", function () {
 
 });
 
-function correctEmail(userAccount) {
+function correctEmail(userEmail) {
     var RED = "#dd4b39";
     var GREY = "#d2d6de";
-    if (!emailValidate(userAccount)) {
-        $('#sign-in-userAccount').css("border-color", RED);
+    if (!emailValidate(userEmail)) {
+        $('#userEmail').css("border-color", RED);
         return false;
     } else {
-        $('#sign-in-userAccount').css("border-color", GREY);
+        $('#userEmail').css("border-color", GREY);
         return true;
     }
 }
