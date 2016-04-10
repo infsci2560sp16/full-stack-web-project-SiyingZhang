@@ -4,27 +4,22 @@
  */
 
 $(document).ready(function () {
-    $.ajax("/myWordsList", {
+    $.ajax("/review", {
         method: "GET",
         dataType: "xml",
         success: function (xmlDoc) {
             var container = $('.words-list.word-list-in-box');	//using class name
-            var createdBy = $(xmlDoc).find('wordList').attr('createdBy');
-            $(xmlDoc).find('group').each(function () {
-                var groupId = $(this).find('groupId').text(),
-                    groupName = $(this).find('groupName').text(),
-                    latestPost = $(this).find('latestPost').text(),
-                    hasBgImg = $(this).find('hasBgImg').text();
-                var htmlText = '<li class="item">' +
-                    '\t<div class="product-img">' +
-                    '\t\t<img src="dist/img/group/'+ ((hasBgImg === "true")?groupId:"default")+'/b-50x50.jpg" alt="Product Image">' +
-                    '\t</div>' +
-                    '<div class="product-info">' +
-                    '\t<a href="javascript#" class="product-title">'+ groupName +
-                    '<span class="label label-warning pull-right">34</span></a>' +
-                    '\t\t<span class="product-description">'+latestPost+'</span>' +
-                    '\t</div>' +
-                    '</li>';
+            var wordId = $(xmlDoc).find('wordsList').attr('wordId');
+            $(xmlDoc).find('word').each(function () {
+                var wordId = $(this).find('wordId').text(),
+                    word = $(this).find('word').text(),
+                    wordType = $(this).find('wordType').text(),
+                    explanation = $(this).find('explanation').text();
+                var htmlText = '<li class="list-group-item">' + 
+                '\t<h4 class="list-group-item-text">' + word + '</h4>' +
+                '\t<p class="list-group-item-text">' + wordType + '</p>' +
+                '\t<p class="list-group-item-text">' + explanation + '</p>' +
+                '\t</li>';
                 container.append(htmlText);
             });
 
